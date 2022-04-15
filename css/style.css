@@ -1,0 +1,178 @@
+/*====================
+    VARIABLES
+====================*/
+/*====================
+    END VARIABLES
+====================*/
+/*====================
+    STYLES
+====================*/
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+/* Reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  background: #121417;
+}
+
+/* MISC STYLES */
+.hide {
+  display: none !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* END MISC STYLES */
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+  width: min(430px, 100%);
+  padding: 3rem;
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#252d37), to(rgba(37, 45, 55, 0.5)));
+  background: linear-gradient(to bottom, #252d37, rgba(37, 45, 55, 0.5));
+  border-radius: 2.4rem;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@media (min-width: 425px) {
+  .card {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.card__header--label {
+  font-size: 3rem;
+}
+
+.card__header--description {
+  color: #959eac;
+}
+
+.card__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+.card__rating-item .card__round {
+  padding: 1rem;
+  color: #7c8798;
+  cursor: pointer;
+}
+
+.card__rating-item .card__round:hover, .card__rating-item .card__round:focus {
+  color: white;
+  background: #7c8798;
+}
+
+.card__rating-item input {
+  display: none;
+}
+
+.card__rating-item input:checked ~ .card__round {
+  color: white;
+  background: #fb7413;
+}
+
+.card__submit {
+  width: 100%;
+  padding: 1.8rem;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: white !important;
+  border: none;
+  border-radius: 99px;
+  background: #fb7413 !important;
+  cursor: pointer;
+}
+
+.card__submit:hover {
+  color: #fb7413;
+  background: white;
+}
+
+.card__submit:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.card__round {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  line-height: 2.1;
+  border-radius: 99px;
+  background: rgba(124, 135, 152, 0.1);
+}
+
+.card__header.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.card__header.align-center .card__header--sm {
+  color: #fb7413;
+  background: rgba(124, 135, 152, 0.1);
+  line-height: 1;
+  padding: 10px 15px;
+  border-radius: 99px;
+}
+
+/*====================
+    END STYLES
+====================*/
+/*# sourceMappingURL=style.css.map */

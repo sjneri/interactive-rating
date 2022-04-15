@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section id="rate" class="card">
+    <!-- Star -->
+    <div class="card__icon card__round">
+      <img src="images/icon-star.svg" class="card__icon--img" alt="star-rating">
+    </div>
+
+    <!-- Header -->
+    <div class="card__header">
+      <h1 class="card__header--label">How did we do?</h1>
+      <p class="card__header--description">
+        Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+      </p>
+    </div>
+    
+    <div id="rateForm" name="rateForm" class="card__rating">
+      <input type="button" id="btnRate" class="card__submit" value="Submit">
+    </div>
+  </section>
+
+  <script>
+    let rateContainer = document.getElementById('rateForm');
+    let rateItems = 5;
+
+    for(var i = 1; i <= rateItems; i++) {
+      rateContainer.innerHTML += `
+        <div class="card__rating-item">
+          <input type="radio" id="rating-${i}" name="rating" value="${i}">
+          <label for="rating-${i}" class="card__round">${i}</label>
+        </div>
+      `
+    }
+
+    if (!(document.querySelector('input[name="rating"]:checked'))) {
+      document.getElementById('btnRate').disabled = true;
+    }
+
+    rateContainer.addEventListener("click", () => {
+      document.getElementById('btnRate').disabled = false;
+    });
+
+    document.getElementById('btnRate').addEventListener("click", () => {
+      let rateChecked = document.querySelector('input[name="rating"]:checked');
+      let rateMain = document.getElementById('rate');
+
+      rateMain.innerHTML = `
+        <div class="card__bg align-center">
+          <img src="images/illustration-thank-you.svg" alt="thank-you" class="card__bg--img">
+        </div>
+
+        <div class="card__header align-center">
+          <p class="card__header--sm">You selected ${rateChecked.value} out of 5</p>
+          <h1 class="card__header--label">Thank you!</h1>
+          <p class="card__header--description">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+        </div>
+      `;
+
+      console.log("Rate: ", rateChecked.value);
+    });
+  </script>
+</body>
+</html>
